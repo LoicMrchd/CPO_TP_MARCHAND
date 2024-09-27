@@ -18,8 +18,8 @@ public class TP1_manipNombresInt_MARCHAND {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Scanner sc;
-        sc = new Scanner( System.in);
+    Scanner sc;
+    sc = new Scanner( System.in);
     
     
     System.out.println( "Veuillez saisir le premier entier :"); 
