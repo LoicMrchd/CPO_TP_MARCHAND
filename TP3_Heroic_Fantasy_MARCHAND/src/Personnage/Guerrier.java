@@ -61,4 +61,21 @@ public class Guerrier extends Personnage{
     public String getNiveauVie() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    public void attaquer(Personnage cible) {
+    int degats = 30;
+
+    if (this.armeEnMain instanceof Epee) {
+        Epee epee = (Epee) this.armeEnMain;
+        degats *= epee.getFinesse();
+    }
+
+    if (this.aCheval) {
+        degats /= 2; // Si le guerrier est à cheval, les dégâts sont divisés par 2
+    }
+
+    cible.estAttaque(degats); // Applique les dégâts à la cible
+    this.seFatiguer();        // Le guerrier se fatigue après une attaque
+
+    System.out.println(this.nom + " a attaqué " + cible.getNom() + " infligeant " + degats + " points de dégâts.");
+}
 }
